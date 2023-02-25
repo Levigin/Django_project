@@ -1,0 +1,122 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --index: calc(1vw + 1vh);
+}
+
+html,
+body {
+    height: 100%;
+    overflow: hidden;
+}
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.main-header{
+    padding: 15px;
+}
+.conteiner-nav{
+    display: flex;
+    justify-content: space-between;
+}
+.main-header__item{
+    display: flex;
+}
+.main-header_logo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 12px;
+}
+.main-header_logo a{
+    color: black;
+    font-family: 'Figtree', sans-serif;
+    font-size: 32px;
+    text-decoration: none;
+}
+.main-header_img img{
+    width: 239px;
+    height: 169px;
+}
+
+.reg-btns{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.container-btn{
+    display: flex;  
+}
+
+.ent{
+    display: flex;
+    flex-direction: column;
+    background-color: #DAEF14;
+    width: 125px;
+    height: 70px;
+    border-radius: 25px;
+    text-align: center;
+    justify-content: center;
+    margin: 0 23px;
+    padding: 0 10px;
+}
+.ent a{
+    font-family: 'Roboto Flex';
+    color: black;
+    width: 100%;
+    font-size: 2em;
+    text-decoration: none;
+}
+.reg{
+    display: flex;
+    flex-direction: column;
+    background-color: #F5F3FF;
+    width: 227px;
+    height: 70px;
+    border-radius: 25px;
+    text-align: center;
+    justify-content: center;
+    padding: 0 10px;
+}
+.reg a{
+    font-family: 'Roboto Flex';
+    color: black;
+    width: 100%;
+    font-size: 2em;
+    text-decoration: none;
+}
+.main {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
+}
+.banner{ 
+    height: 100%;
+    position: absolute;
+    top: 0vh;
+}
+.tagline_1 {
+    font-size: 4em;
+    color:#DAEF14;
+    position: absolute;
+    left: 10vw;
+    top: 25vh;
+}
+.tagline_2 {
+    font-size: 4em;
+    color:#DAEF14;
+    position: absolute;
+    right: 10vw;
+    top: 46vh;
+}
+footer {
+    width: 100vw;
+    line-height: 60px;
+    background-color: #343a40;
+}

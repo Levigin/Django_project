@@ -1,0 +1,56 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<div class="container">
+    <h1 class="my-3">Сотрудники</h1>
+    <div class="row">
+        {% for item in boss_subordinates %}
+        <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+                {% if item.photo %}
+                <img src="{{ item.photo.url }}" alt="" class="card-img-top">
+                {% else %}
+                Photo
+                {% endif %}
+                <div class="card-body">
+                    <h4 class="card-title">{{ item.full_name }}</h4>
+                    <p class="card-text">{{ item.post }}</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <a href="#" class="btn btn-sm btn-outline-secondary">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<div class="progres_bar">
+    <div class="photo">
+        <div class="user_photo"><img src="{{ hr.photo.url }}"></div>
+        <div class="user_name">{{ boss.full_name }}</div>
+    </div>
+    <div class="user_heigth">
+        <h3>Прогресс</h3>
+        <div class="point"></div>
+    </div>
+    <div class="test">
+        <h3>Тесты</h3>
+        <div class="user_test">
+            <div>Test№1</div>
+            <div>Test№1</div>
+        </div>
+    </div>
+    <div class="prize">
+        <h3>Достижения</h3>
+        <div class="user_prize">
+            <div>Достижение 1</div>
+            <div>Достижение 1</div>
+            <div>Достижение 1</div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

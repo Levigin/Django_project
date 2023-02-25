@@ -1,0 +1,62 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<div class="container">
+    <section class="roadmap">
+        <h2 class="roadmap__title">Дорожная карта</h2>
+        <div class="roadmap__container">
+            <span class="roadmap__track"></span>
+            <button class="point point_first-position"></button>
+            <button class="point__description description_first-position">
+                <p class="point__height">0 м</p>
+                <p class="point__status">Знакомство</p>
+            </button>
+            <button class="point point_second-position"></button>
+            <button class="point__description description_second-position">
+                <p class="point__height">500 м</p>
+                <p class="point__status">Тема 1</p>
+            </button>
+            <button class="point point_third-position"></button>
+            <button class="point__description description_third-position">
+                <p class="point__height">1000 м</p>
+                <p class="point__status">Тема 2</p>
+            </button>
+            <button class="point point_fourth-position"></button>
+            <button class="point__description description_fourth-position">
+                <p class="point__height">1500 м</p>
+                <p class="point__status">Тема 3</p>
+            </button>
+            <button class="point point_fifth-position"></button>
+            <button class="point__description description_fifth-position">
+                <p class="point__height">2000 м</p>
+                <p class="point__status">Тема 4</p>
+            </button>
+        </div>
+    </section>
+</div>
+<div class="progres_bar">
+    <div class="photo">
+        <div class="user_photo"><img src="{{ hr.photo.url }}"></div>
+        <div class="user_name">{{ employee.full_name }}</div>
+    </div>
+    <div class="user_heigth">
+        <h3>Прогресс</h3>
+    </div>
+    <div class="test">
+        <h3>Тесты</h3>
+        <div class="user_test">
+            <div>Test№1</div>
+            <div>Test№1</div>
+        </div>
+    </div>
+    <div class="prize">
+        <h3>Достижения</h3>
+        <div class="user_prize">
+            <div>Достижение 1</div>
+            <div>Достижение 1</div>
+            <div>Достижение 1</div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

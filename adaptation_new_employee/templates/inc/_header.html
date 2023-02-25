@@ -1,0 +1,21 @@
+{% load static %}
+<header class="main-header">
+    <div class="conteiner-nav">
+        <div class="main-header__item">
+            <div class="main-header_logo">
+                <a href="#">Онбординг</a>
+            </div>
+            <div class="main-header_img"><img src="{% static 'img/logo1.png' %}"></div>
+        </div>
+        <div class="reg-btns">
+            <div class="container-btn">
+                {% if user.is_authenticated %}
+                <div class="ent"><a href="{% url 'logout' %}">Выход</a></div>
+                {% else %}
+                <div class="ent"><a href="{% url 'login' %}">Войти</a></div>
+                <!--                    <div class="reg"><a href="#">Регистрация</a></div>-->
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</header>

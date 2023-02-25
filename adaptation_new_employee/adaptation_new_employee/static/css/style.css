@@ -1,0 +1,197 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --index: calc(1vw+1vh);
+}
+
+html,
+body {
+    height: 100%;
+}
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-header{
+    padding: 15px;
+}
+.conteiner-nav{
+    display: flex;
+    justify-content: space-between;
+}
+.main-header__item{
+    display: flex;
+}
+.main-header_logo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 12px;
+}
+.main-header_logo a{
+    color: black;
+    font-family: 'Figtree', sans-serif;
+    font-size: 32px;
+    text-decoration: none;
+}
+.main-header_img img{
+    width: 239px;
+    height: 169px;
+}
+
+.reg-btns{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.container-btn{
+    display: flex;  
+}
+
+.ent{
+    display: flex;
+    flex-direction: column;
+    background-color: #DAEF14;
+    width: 125px;
+    height: 70px;
+    border-radius: 25px;
+    text-align: center;
+    justify-content: center;
+    margin: 0 23px;
+    padding: 0 10px;
+}
+.ent a{
+    font-family: 'Roboto Flex';
+    color: black;
+    width: 100%;
+    font-size: 2em;
+    text-decoration: none;
+}
+.reg{
+    display: flex;
+    flex-direction: column;
+    background-color: #F5F3FF;
+    width: 227px;
+    height: 70px;
+    border-radius: 25px;
+    text-align: center;
+    justify-content: center;
+    padding: 0 10px;
+}
+.reg a{
+    font-family: 'Roboto Flex';
+    color: black;
+    width: 100%;
+    font-size: 2em;
+    text-decoration: none;
+}
+
+section {
+    flex: 1 1 auto;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    gap: 2px;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+section .signin {
+    
+    width: 400px;
+    background: #8C64D8;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+}
+section .signin .content{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 40px;
+}
+section .signin .content h2 {
+    text-align: center;
+    font-size: 2em;
+    color: #FFFFFF;
+    text-transform: uppercase;
+}
+section .signin .content .form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+section .signin .content .form .inputBx{
+    position: relative;
+    width: 100%;
+}
+section .signin .content .form input{
+    position: relative;
+    width: 100%;
+    background: #333;
+    border: none;
+    outline: none;
+    padding: 25px 10px 7.5px;
+    border-radius: 4px;
+    color: #fff;
+    font-weight: 500;
+    font-size: 1em;
+}
+section .signin .content .form .inputBx i{
+    position: absolute;
+    left: 0;
+    padding: 15px 10px;
+    font-style: normal;
+    color: #aaa;
+    transition: 0.5s;
+    pointer-events: none;
+}
+.signin .content .form .inputBx input:focus ~ i,
+.signin .content .form .inputBx input:valid ~ i{
+    transform: translateY(-7.5px);
+    font-size: 0.8em;
+    color: #fff;
+}
+.signin .content .form .links {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.signin .content .form .links a{
+    color: #fff;
+    text-decoration: none;    
+}
+.signin .content .form .links a:nth-child(2){
+    color: #0f0;
+    font-weight: 600;
+}
+.signin .content .form .inputBx input[type="submit"]{
+    padding: 10px;
+    background: #DAEF14;
+    color: #111;
+    font-weight: 600;
+    font-size: 1.25em;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+}
+footer {
+    width: 100vw;
+    line-height: 60px;
+    background-color: #343a40;
+}

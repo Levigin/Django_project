@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method="post">
+{% csrf_token %}
+    <section>
+        <div class="signin">
+            <div class="content">
+                <h2>Вход</h2>
+                <div class="form">
+                    <div class="inputBx" >
+<!--                        <input  type="text" name="email" required>-->
+                        <i>E-mail</i>
+                        {{ form.username }}
+                    </div>
+                    <div class="inputBx">
+<!--                        <input type="password" name="psw" required>-->
+                        {{ form.password }}
+                        <i>Пароль</i>
+                    </div>
+
+                    <div class="links">
+                        <a href="#">Забыли пароль?</a>
+                    </div>
+                    <div class="inputBx">
+                        <input type="submit" value="Войти">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</form>
+{% endblock %}
+

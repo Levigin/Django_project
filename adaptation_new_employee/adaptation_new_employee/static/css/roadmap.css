@@ -1,0 +1,141 @@
+.roadmap {
+  display: flex;
+  flex-direction: column;
+  gap: 140px;
+  background-color: #F5F3FF;
+  align-items: center;
+  font-family: 'GTE', Verdana, Tahoma, sans-serif;
+  font-size: 32px;
+  line-height: 37px;
+  font-weight: 300;
+  min-height: 100vh;
+  z-index: 0;
+}
+
+.roadmap__title {
+  margin: 0;
+  margin-top: 70px;
+  font-size: 32px;
+  line-height: 37px;
+  font-weight: 500;
+}
+
+.roadmap__container {
+  position: relative;
+  background: url(./img/mountain.svg) no-repeat center/contain;
+  width: 768px;
+  height: 382px;
+  z-index: 1;
+}
+
+.roadmap__track {
+  position: absolute;
+  top: -20px;
+  left: 310px;
+  background: url(./img/track.svg) no-repeat center/contain;
+  width: 260px;
+  height: 450px;
+  z-index: 2;
+}
+
+.point {
+  background: url(./img/point.svg) no-repeat center/contain;
+  position: absolute;
+  border: none;
+  cursor: pointer;
+}
+
+.point_first-position {
+  width: 45px;
+  height: 60px;
+  bottom: 50px;
+  left: 290px;
+  z-index: 3;
+}
+
+.point_second-position {
+  width: 32px;
+  height: 43px;
+  bottom: 135px;
+  left: 550px;
+  z-index: 3;
+}
+
+.point_third-position {
+  width: 28px;
+  height: 35px;
+  bottom: 210px;
+  left: 320px;
+  z-index: 3;
+}
+
+.point_fourth-position {
+  width: 25px;
+  height: 30px;
+  bottom: 275px;
+  left: 435px;
+  z-index: 3;
+}
+
+.point_fifth-position {
+  background: url(./img/flag.svg) no-repeat center/contain;
+  width: 43px;
+  height: 65px;
+  bottom: 370px;
+  left: 405px;
+  z-index: 3;
+}
+
+.point__description {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 35px;
+  position: absolute;
+  background: #E7E5F1;
+  border: none;
+  border-radius: 25px;
+  width: 210px;
+  height: 150px;
+  z-index: 3;
+}
+
+.point__height {
+  margin: 0;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 37px;
+}
+
+.point__status {
+  margin: 0;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.description_first-position {
+  background: #DAEF14;
+  bottom: -120px;
+  left: 510px;
+}
+
+.description_second-position {
+  top: 285px;
+  left: 0px;
+}
+
+.description_third-position {
+  top: 60px;
+  left: 588px;
+}
+
+.description_fourth-position {
+  top: 95px;
+  left: 44px;
+}
+
+.description_fifth-position {
+  bottom: 345px;
+  left: 516px;
+}
