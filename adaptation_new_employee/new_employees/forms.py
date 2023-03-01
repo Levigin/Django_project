@@ -11,6 +11,8 @@ class UserLoginForm(AuthenticationForm):
     password = forms.CharField(widget=forms.PasswordInput(attrs={'name': 'psw'}), required=True)
 
 
+
+
 # class MissionsBossForm(forms.ModelForm):
 #     class Meta:
 #         model = MissionsBoss

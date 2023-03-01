@@ -1,45 +1,45 @@
 {% extends 'main.html' %}
 
 {% block content %}
-
-<div class="container">
-    <h1 class="my-3">Сотрудники</h1>
-    <div class="row">
-        {% for item in hr_employees %}
-        <div class="col-md-4">
-            <div class="card mb-4 shadow-sm">
-                {% if item.photo %}
-                <img src="{{ item.photo.url }}" alt="" class="card-img-top">
-                {% else %}
-                Photo
-                {% endif %}
-                <div class="card-body">
-                    <h4 class="card-title">{{ item.full_name }}</h4>
-                    <p class="card-text">Stack: {{ item.stack }}</p>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group">
-                            <a href="#" class="btn btn-sm btn-outline-secondary">Добавить задание</a>
-                        </div>
-                        <div class="btn-group">
-                            <a href="#" class="btn btn-sm btn-outline-secondary">Личная карточка</a>
-                        </div>
+<h1 class="my-3">Сотрудники</h1>
+<div class="row">
+    {% for item in hr_employees %}
+    <div class="col-md-4">
+        <div class="card mb-4 shadow-sm">
+            {% if item.photo %}
+            <img src="{{ item.photo.url }}" alt="" class="card-img-top">
+            {% else %}
+            Photo
+            {% endif %}
+            <div class="card-body">
+                <h4 class="card-title">{{ item.full_name }}</h4>
+                <p class="card-text">Stack: {{ item.stack }}</p>
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                        <a href="#" class="btn btn-sm btn-outline-secondary">Добавить задание</a>
+                    </div>
+                    <div class="btn-group">
+                        <a href="{{ item.get_absolute_url }}" class="btn btn-sm btn-outline-secondary">Личная
+                            карточка</a>
                     </div>
                 </div>
             </div>
         </div>
-        {% endfor %}
     </div>
+    {% endfor %}
 </div>
-<div class="progres_bar">
+
+<div class="progres_bar" id="pb">
     <div class="photo">
-        <div class="user_photo"><img src="{{ hr.photo.url }}"></div>
-        <div class="user_name">{{ hr.full_name }}</div>
+        <div class="user_photo">
+            <img src="img/User.jpg">
+        </div>
+        <div class="user_name">Ivanon Ivan</div>
+        <div id="close"><a href="#">close</a></div>
     </div>
     <div class="user_heigth">
         <h3>Прогресс</h3>
-        <div class="user_prize">
-
-        </div>
+        <div class="evolution"></div>
     </div>
     <div class="test">
         <h3>Тесты</h3>
@@ -57,5 +57,4 @@
         </div>
     </div>
 </div>
-
 {% endblock %}

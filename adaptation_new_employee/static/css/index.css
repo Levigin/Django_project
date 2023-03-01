@@ -1,8 +1,24 @@
 /*normalize*/
-@import url(./vendor/normalize.css);
+@import url(../vendor/normalize.css);
 
 /*fonts*/
-@import url(./fonts/fonts.css);
+@import url(../fonts/fonts.css);
 
 /*roadmap*/
-@import url(./roadmap.css);
+@import url(roadmap.css);
+/*main_menu*/
+@import url(mein_menu.css);
+/*progress*/
+@import url(progress.css);
+/*main_page*/
+@import url(main.css);
+/*signin*/
+@import url(signin.css);
+    
+:root{
+    --index: calc(1vw + 1vh);
+}
+
+.conteiner {
+    display: flex;
+}

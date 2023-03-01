@@ -64,3 +64,10 @@ def new_employee(request):
     user = request.user
     employee = NewEmployee.objects.get(user_name=user)
     return render(request, 'new_employees/new_employee.html', {'employee': employee})
+
+
+class ViewEmployee(ListView):
+    model = NewEmployee
+    template_name = 'new_employees/employee.html'
+    context_object_name = 'employee'
+

@@ -2,6 +2,7 @@ from django.contrib.auth.models import User
 from django.db import models
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+from django.urls import reverse
 
 
 class Profile(models.Model):
@@ -50,9 +51,19 @@ class NewEmployee(Profile):
     rank = models.IntegerField(default=100, verbose_name="Ранг", blank=True)
     point = models.IntegerField(default=0, verbose_name='Очки', blank=True)
     user_name = models.OneToOneField(User, on_delete=models.CASCADE)
+    missions = models.ForeignKey('MissionsModel', on_delete=models.PROTECT, verbose_name='Задания', null=True)
+
+    def get_absolute_url(self):
+        return reverse("employee", kwargs={'pk': self.pk, 'user_name': self.user_name})
 
     class Meta:
         ordering = ['full_name']
         verbose_name = 'Новый сотрудник'
         verbose_name_plural = 'Новые сотрудники'
+
+
+class MissionsModel(models.Model):
+    content = models.TextField(verbose_name='Задание')
+    deadline = models.DateField(verbose_name='Крайний срок сдачи')
+    completed = models.BooleanField(default=False, verbose_name='Сдано/не сдано')
 
