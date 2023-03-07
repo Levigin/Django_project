@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    <section>
+        <div class="signin">
+            <div class="content">
+                <h2>Вход</h2>
+                <div class="form">
+                    <div class="inputBx">
+                        <i>{{ form.title.label }}</i>
+                        {{ form.content }}
+                        <p>{{ form.content.errors }}</p>
+                    </div>
+                    <div class="inputBx">
+                        <i>{{ form.deadline.label }}</i>
+                        {{ form.deadline }}
+                        <p>{{ form.deadline.errors }}</p>
+                    </div>
+                    <div class="inputBx">
+                        <i>{{ form.points.label }}</i>
+                        {{ form.points }}
+                        <p>{{ form.points.errors }}</p>
+                    </div>
+<!--                    <div class="inputBx">-->
+<!--                        <i>{{ form.employee.label }}</i>-->
+<!--                        {{ form.employee }}-->
+<!--                        <p>{{ form.employee.errors }}</p>-->
+<!--                    </div>-->
+
+                    <div class="inputBx">
+                        <input type="submit" value="Войти">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</form>
+{% endblock %}
+

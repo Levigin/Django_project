@@ -1,7 +1,10 @@
-from django.shortcuts import render, redirect
+from django.core.mail import send_mail, BadHeaderError
+from django.http import HttpResponse
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import login, logout
 from .forms import *
 from django.views.generic import ListView
+from adaptation_new_employee import settings
 
 
 def user_login(request):
@@ -32,20 +35,6 @@ def home(request):
     return render(request, 'new_employees/home.html')
 
 
-class HRView(ListView):
-    model = HR
-    template_name = 'new_employees/hr.html'
-    context_object_name = 'hr'
-
-    def get_queryset(self):
-        user = self.request.user
-        print(f'user: {user}')
-        qr = HR.objects.get(user_name=user)
-        hr_empl = qr.employees.all()
-        print(f'qr: = {qr.employees.all()}')
-        return render(self.request, self.template_name, {'hr_empl': hr_empl})
-
-
 def hr_view(request):
     user = request.user
     hr = HR.objects.get(user_name=user)
@@ -62,8 +51,11 @@ def boss_view(request):
 
 def new_employee(request):
     user = request.user
+    # print(request.session['_auth_user_id'])
     employee = NewEmployee.objects.get(user_name=user)
-    return render(request, 'new_employees/new_employee.html', {'employee': employee})
+    missions = MissionsModel.objects.filter(employee=employee.pk)
+    # print(f'missions: {missions}')
+    return render(request, 'new_employees/new_employee.html', {'employee': employee, 'missions': missions})
 
 
 class ViewEmployee(ListView):
@@ -71,3 +63,31 @@ class ViewEmployee(ListView):
     template_name = 'new_employees/employee.html'
     context_object_name = 'employee'
 
+
+def view_employee(request, user_id):
+    employee = get_object_or_404(NewEmployee, pk=user_id)
+    return render(request, 'new_employees/employee.html', {'employee': employee})
+    # def get_context_data(self, *, object_list=None, **kwargs):
+    #     context = super().get_context_data(**kwargs)
+    #
+    #     return context
+
+
+def add_missions(request, user_id):
+    if request.method == 'POST':
+        form = MissionsForm(request.POST)
+        employee = NewEmployee.objects.get(pk=user_id)
+        if form.is_valid():
+            mission = form.save(commit=False)
+            mission.employee = employee
+            mission.save()
+            try:
+                send_mail('', f'У ВАС НОВОЕ ЗАДАНИЕ от {request.user}:\n{mission.content}', settings.EMAIL_HOST_USER,
+                          [employee.email])
+            except Exception:
+                return HttpResponse('Ошибка в теме письма.')
+            return redirect('home')
+    else:
+        form = MissionsForm()
+
+    return render(request, 'new_employees/mission.html', {'form': form})

@@ -36,29 +36,32 @@
 <div class="progres_bar" id="pb">
     <div class="photo">
         <div class="user_photo">
-            <img src="img/User.jpg">
+            <img src="{{ employee.photo.url }}">
         </div>
-        <div class="user_name">Ivanon Ivan</div>
+        <div class="user_name">{{ employee.full_name }}</div>
         <div id="close"><a href="#">close</a></div>
     </div>
     <div class="user_heigth">
         <h3>Прогресс</h3>
-            <div class="evolution"></div>
+        <div class="evolution"></div>
     </div>
     <div class="test">
-        <h3>Тесты</h3>
-            <div class="user_test">
-                <div>Test№1</div>
-                <div>Test№1</div>
-            </div>
+        <h3>Навыки</h3>
+        <div class="user_test">
+            <div>{{ employee.stack }}</div>
+        </div>
+        <h3>Хобби</h3>
+        <div class="user_test">
+            <div>{{ employee.hobbies }}</div>
+        </div>
     </div>
     <div class="prize">
-        <h3>Достижения</h3>
-            <div class="user_prize">
-                <div>Достижение 1</div>
-                <div>Достижение 1</div>
-                <div>Достижение 1</div>
-            </div>
+        <h3>Задания</h3>
+        <div class="user_prize">
+            {% for mission in missions %}
+            <div>{{ mission.content }}</div>
+            {% endfor %}
+        </div>
     </div>
 </div>
 

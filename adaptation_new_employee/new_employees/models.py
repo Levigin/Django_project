@@ -51,10 +51,9 @@ class NewEmployee(Profile):
     rank = models.IntegerField(default=100, verbose_name="Ранг", blank=True)
     point = models.IntegerField(default=0, verbose_name='Очки', blank=True)
     user_name = models.OneToOneField(User, on_delete=models.CASCADE)
-    missions = models.ForeignKey('MissionsModel', on_delete=models.PROTECT, verbose_name='Задания', null=True)
 
     def get_absolute_url(self):
-        return reverse("employee", kwargs={'pk': self.pk, 'user_name': self.user_name})
+        return reverse("employee", kwargs={'user_id': self.pk})
 
     class Meta:
         ordering = ['full_name']
@@ -63,7 +62,9 @@ class NewEmployee(Profile):
 
 
 class MissionsModel(models.Model):
-    content = models.TextField(verbose_name='Задание')
-    deadline = models.DateField(verbose_name='Крайний срок сдачи')
+    content = models.TextField(verbose_name='Задание', blank=True)
+    deadline = models.DateField(verbose_name='Крайний срок сдачи', blank=True)
+    points = models.IntegerField(default=0, verbose_name='Количество очков за задание', blank=True)
     completed = models.BooleanField(default=False, verbose_name='Сдано/не сдано')
+    employee = models.ForeignKey('NewEmployee', on_delete=models.CASCADE, verbose_name='Задания', null=True)
 

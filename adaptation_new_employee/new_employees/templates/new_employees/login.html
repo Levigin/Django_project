@@ -2,21 +2,21 @@
 
 {% block content %}
 <form method="post">
-{% csrf_token %}
-    <section>
+    {% csrf_token %}
+    <div class="content">
         <div class="signin">
             <div class="content">
                 <h2>Вход</h2>
                 <div class="form">
-                    <div class="inputBx" >
-<!--                        <input  type="text" name="email" required>-->
-                        <i>E-mail</i>
+                    <div class="inputBx">
+                        <i>{{ form.username.label }}</i>
                         {{ form.username }}
+                        <p>{{ form.username.errors }}</p>
                     </div>
                     <div class="inputBx">
-<!--                        <input type="password" name="psw" required>-->
+                        <i>{{ form.password.label }}</i>
                         {{ form.password }}
-                        <i>Пароль</i>
+                        <p>{{ form.password.errors }}</p>
                     </div>
 
                     <div class="links">
@@ -28,7 +28,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 </form>
 {% endblock %}
 

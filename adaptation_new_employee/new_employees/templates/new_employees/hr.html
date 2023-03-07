@@ -16,7 +16,7 @@
                 <p class="card-text">Stack: {{ item.stack }}</p>
                 <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                        <a href="#" class="btn btn-sm btn-outline-secondary">Добавить задание</a>
+                        <a href="{% url 'add_missions' item.pk %}" class="btn btn-sm btn-outline-secondary">Добавить задание</a>
                     </div>
                     <div class="btn-group">
                         <a href="{{ item.get_absolute_url }}" class="btn btn-sm btn-outline-secondary">Личная
