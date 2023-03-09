@@ -132,9 +132,9 @@ MEDIA_URL = '/media/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Send email massage
-EMAIL_HOST = 'smtp.mail.ru'
-EMAIL_PORT = 465
-EMAIL_HOST_USER = 'serganates68@mail.ru'
-EMAIL_HOST_PASSWORD = 'Tvq5c8EUWmTfhdnB9PJ3'
+EMAIL_HOST = ''
+EMAIL_PORT = 1
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
 EMAIL_USE_TLS = False
 EMAIL_USE_SSL = True
